@@ -1,0 +1,29 @@
+
+{% extends 'layout/app-layout.html' %}
+
+{% block content %}
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Sign Up</h2>
+      <form method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+          {{ form.username }}
+          <!-- Add any error handling if required -->
+        </div>
+        <div class="mb-3">
+          <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
+          {{ form.password1 }}
+          <!-- Add any error handling if required -->
+        </div>
+        <div class="mb-3">
+          <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
+          {{ form.password2 }}
+          <!-- Add any error handling if required -->
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
